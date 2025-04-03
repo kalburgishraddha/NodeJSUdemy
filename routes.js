@@ -19,6 +19,7 @@ const requestHandler = (req,res) =>{
             console.log(chunk);
             body.push(chunk);
         });
+
         return req.on('end', ()=> {
             const parseBody = Buffer.concat(body).toString();
             console.log(parseBody);
@@ -30,6 +31,7 @@ const requestHandler = (req,res) =>{
             });
         })
     }
+    
     res.setHeader('Content-Type','text/html');
     res.write('<html');
     res.write('<head><title>My first page</title></head>');
