@@ -5,11 +5,12 @@ const app = express();
 
 app.use((req,res,next)=> {
     console.log("inside middleware");
-    next();
+    next(); //this allows request to continue to next middleware in line
 });
 
 app.use((req,res,next)=> {
-    console.log("inside another middleware")
+    console.log("inside another middleware");
+    res.send('<h1>Hello from express</h1>');
 });
 
 const server = http.createServer(app);
