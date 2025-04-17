@@ -11,7 +11,7 @@ router.get('/',(req,res,next)=> {
     console.log("inside another middleware");
     console.log("shop.js products",adminData.products)
     //res.sendFile(path.join(rootDir, 'views', 'shop.html'));
-    res.render('shop');
+    res.render('shop',{'prods':adminData.products, 'docTitle':'My Shop'});
 });
 
 module.exports = router;
